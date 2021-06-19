@@ -1,5 +1,5 @@
 /**
- * This code tests and checks maximum integer among three integers.
+ * This code tests and checks maximum floats among three floats.
  *
  * @author Pratik Chaudhari
  * @since 19/06/2021
@@ -7,21 +7,21 @@
 package com.pratik.max;
 
 public class MaxFinder {
-    public static Integer findMax(Integer int1, Integer int2, Integer int3) {
-        Integer max = int1;
-	//Utilising compareTo method to find largest integer among three.
-        if (int2.compareTo(max)>0) {
-            max = int2;
+    public static Float findMax(Float float1, Float float2, Float float3) {
+        Float max = float1;
+        //Utilising compareTo method to find largest float among three.
+        if (float2.compareTo(max)>0) {
+            max = float2;
         }
-        if (int3.compareTo(max)>0) {
-            max = int3;
+        if (float3.compareTo(max)>0) {
+            max = float3;
         }
-        System.out.printf("Max value of %s %s %s is : %s\n", int1,int2,int3,max);
+        System.out.printf("Max value of %s %s %s is : %s\n", float1, float2, float3, max);
         return max;
     }
-    // Main method.
+    // Main method
     public static void main(String[] args) {
-        Integer int1 = 15, int2 = 23, int3 = 39;
-        Integer max = findMax(int1, int2, int3);
+        Float float1 = 15.2f, float2 = 23.5f, float3 = 3.39f;
+        Float max = findMax(float1, float2, float3);
     }
 }
