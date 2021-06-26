@@ -7,7 +7,10 @@
  */
 package com.pratik.max;
 
-public class MaxFinder <T extends Comparable<T>> {
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class MaxFinder<T extends Comparable<T>> {
     T num1;
     T num2;
     T num3;
@@ -79,11 +82,24 @@ public class MaxFinder <T extends Comparable<T>> {
         return MaxFinder.GenericMax(num1, num2, num3);
     }
 
+    /**
+     * UC4: method to take more than three parameters
+     */
+    public static <T extends Comparable<T>> T GenericMax(T... elements) {
+        List<T> list = (List<T>) Arrays.asList(elements).stream().sorted().collect(Collectors.toList());
+        return list.get(elements.length - 1);
+    }
+
+    /**
+     * main function
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        System.out.println("Maximum Value of Integer given is :" + findMax(6, 3, 9));
-        System.out.println("Maximum value of Float numbers given is :" + findMax(1.0f, 5.0f, 3.0f));
-        System.out.println("Maximum value of String given is :" + findMax("Boy", "Girl", "Animal"));
-        System.out.println("Maximum value of String given is :" + GenericMax("Boy", "Girl", "Animal"));
+        System.out.println("Maximum Value of Integer given is :" + findMax(4, 1, 3));
+        System.out.println("Maximum value of Float numbers given is :" + findMax(0.1f, 4.0f, 3.2f));
+        System.out.println("Maximum value of String given is :" + findMax("Apple", "Peach", "Banana"));
+        System.out.println("Maximum value of String given is :" + GenericMax("Apple", "Peach", "Banana"));
         System.out.println("Maximum Integer by creating Generic class :" + new MaxFinder<Integer>(3, 6, 2).GenericMax());
     }
 }
