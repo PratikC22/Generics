@@ -91,6 +91,13 @@ public class MaxFinder<T extends Comparable<T>> {
     }
 
     /**
+     * UC5: method to print max of three or more variable of any type
+     */
+    public static <T> void printMax(T max) {
+        System.out.println("Maximum value of the variable given is:" + max);
+    }
+
+    /**
      * main function
      *
      * @param args
@@ -101,5 +108,6 @@ public class MaxFinder<T extends Comparable<T>> {
         System.out.println("Maximum value of String given is :" + findMax("Apple", "Peach", "Banana"));
         System.out.println("Maximum value of String given is :" + GenericMax("Apple", "Peach", "Banana"));
         System.out.println("Maximum Integer by creating Generic class :" + new MaxFinder<Integer>(3, 6, 2).GenericMax());
+        System.out.println("Maximum Integer by Creating Generics class for more than 3 variables :" + GenericMax(1,2,3,4));
     }
 }
